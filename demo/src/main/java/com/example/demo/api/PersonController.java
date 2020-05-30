@@ -12,6 +12,6 @@ public class PersonController {
     }
 
     public void addPerson(Person person){
-        PersonService.addPerson();
+        personService.addPerson(person);
     }
 }

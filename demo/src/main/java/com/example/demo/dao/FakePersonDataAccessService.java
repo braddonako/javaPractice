@@ -1,10 +1,13 @@
 package com.example.demo.dao;
 
 import com.example.demo.model.Person;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
+@Repository("fakeDao"); // this allows us to have multiple implementations -- then we can say Mongo here damn
 
 public class FakePersonDataAccessService implements PersonDao {
 
