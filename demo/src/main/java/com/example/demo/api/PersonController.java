@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+import java.util.UUID;
 
 @RequestMapping("api/v1/person")
 @RestController //this is a rest controller class -- we can now make endpoints that the client can consume
@@ -28,6 +28,12 @@ public class PersonController {
     @GetMapping
     public List<Person> getAllPeople(){
         return personService.getAllPeople();
+    }
+
+    @GetMapping
+    public Person getPersonById(UUID id){
+        return personService.getPersonById(id)
+                .orElse(null);
     }
 
 }
